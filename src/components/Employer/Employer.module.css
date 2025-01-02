@@ -1,0 +1,31 @@
+.headingContainer {
+	display: flex;
+  border-bottom:1px solid grey;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.headingContainerChild {
+	width: 50%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.headingContainerLastChild {
+	border-left:1px solid grey;
+}
+
+.successContainer {
+	justify-content: center;
+	align-items: center;
+}
+
+.successLoginContainer{
+  text-align: end;
+  background-color: #7a7a7a;
+  padding: 15px 25px;
+  width: 10%;
+  border-radius: 26px;
+  margin-top: 24px;
+}
