@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React , {useEffect, useState} from "react";
 import styles from '../SignIn/SignIn.module.css';
 import employerStyles from '../Employer/Employer.module.css';
 import jobStyles from './Job.module.css';
@@ -7,11 +7,30 @@ import { Link } from 'react-router-dom';
 const JobApplication = () => {
 
   const [filter,setFilter] = useState('');
+  const [jobApplications,setJobApplications] = useState('');
 
   const handleChange = (value) =>{
     setFilter(value)
   }
-  
+
+
+  const fetchPosts = async () => {
+    try {
+
+      const response = await fetch('https://dummyjson.com/posts/user/5');
+      const jsonData = await response.json(); 
+      setJobApplications(jsonData); // Log the data
+    } catch (error) {
+      console.error('Error fetching data:', error); // Handle any errors
+    }
+  };
+
+  useEffect(()=>{  
+    fetchPosts()
+  },[])
+
+
+  console.log(jobApplications);
 
   return (
     <div className={styles.authBackground}>
@@ -76,7 +95,18 @@ const JobApplication = () => {
               <p>Location : Karachi</p>
             </div>
             <div>
-              image
+                <img src='https://media.istockphoto.com/id/1430983955/vector/emphasis-check-mark-check-box-vector.jpg?s=612x612&w=0&k=20&c=ThIMQiUjqkLBVDSoPeyuZ3SpwWQ-221SQJyPbcNuBvU=' width="10%" alt="logo" />
+            </div>
+          </div>
+
+          <div className={jobStyles.applicationContainer}>
+            <div>
+              <h2>Application Engineer</h2>
+              <p>Applied on : 03-12-2024</p>
+              <p>Location : Karachi</p>
+            </div>
+            <div>
+                <img src='https://banner2.cleanpng.com/20180328/gge/avjsiiav2.webp' width="10%" alt="logo" />
             </div>
           </div>
         </div>

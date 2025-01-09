@@ -13,6 +13,19 @@ const Employer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email === "mak@example.com" && password === "test1234") {
+
+      fetch('https://dummyjson.com/posts/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: 'test title.',
+          userId: 5,
+          /* other post data */
+        })
+      })
+      .then(res => res.json())
+      .then(console.log);
+
       navigate("/employerdashboard");
     } else {
       setError("Invalid email or password");
