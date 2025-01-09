@@ -42,7 +42,7 @@ const EmployerRegistration = () => {
                   </Link>
                 </div>
                 <div  className={employerStyles.headingContainerLastChild +' '+ employerStyles.headingContainerChild}>
-                  <Link to="/employer-registration" >
+                  <Link to="/employerregistration" >
                       Register
                   </Link>
                 </div>

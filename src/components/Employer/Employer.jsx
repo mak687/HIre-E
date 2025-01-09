@@ -12,8 +12,8 @@ const Employer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email === "user@example.com" && password === "password123") {
-      navigate("/dashboard");
+    if (email === "mak@example.com" && password === "test1234") {
+      navigate("/employerdashboard");
     } else {
       setError("Invalid email or password");
     }
@@ -29,7 +29,7 @@ const Employer = () => {
             </Link>
           </div>
           <div  className={employerStyles.headingContainerLastChild +' '+ employerStyles.headingContainerChild}>
-            <Link to="/employer-registration" >
+            <Link to="/employerregistration" >
                 Register
              </Link>
           </div>
